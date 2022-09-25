@@ -1,4 +1,5 @@
 ## Quick Sort
+''' python
 def quick_sort(arr, left, right):
     if left >= right:
         return arr
@@ -15,3 +16,4 @@ def quick_sort(arr, left, right):
     quick_sort(arr, left, i - 1)
     quick_sort(arr, i + 1, right)
     return arr
+'''
