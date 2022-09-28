@@ -17,3 +17,21 @@ def quick_sort(arr, left, right):
     quick_sort(arr, i + 1, right)
     return arr
 ```
+
+## BackTrack
+### Combine
+``` python
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        res, path = [], []
+        def backtrack(n, k, start):
+            if len(path) == k:
+                res.append(path[:])
+                return
+            for i in range(start, n - (k - len(path)) + 2):
+                path.append(i)
+                backtrack(n, k, i + 1)
+                path.pop()
+        backtrack(n, k, 1)
+        return res
+```
