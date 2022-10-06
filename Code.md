@@ -33,6 +33,21 @@ def removeElement(self, nums: List[int], val: int) -> int:
         else:
             fast += 1
     return slow
+    
+# 977
+def sortedSquares(self, nums: List[int]) -> List[int]:
+    left, right, k = 0, len(nums) - 1, len(nums) - 1
+    res = [0] * len(nums)
+    while left <= right:
+        l, r = nums[left] * nums[left], nums[right] * nums[right]
+        if l > r:
+            res[k] = l
+            left += 1
+        else:
+            res[k] = r
+            right -= 1
+        k -= 1
+    return res
 ```
 
 ## BackTrack
