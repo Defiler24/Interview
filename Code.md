@@ -18,6 +18,23 @@ def quick_sort(arr, left, right):
     return arr
 ```
 
+## 双指针
+
+``` python
+# 27
+def removeElement(self, nums: List[int], val: int) -> int:
+    n = len(nums)
+    slow, fast = 0, 0
+    for i in range(n):
+        if nums[i] != val:
+            nums[slow] = nums[fast]
+            fast += 1
+            slow += 1
+        else:
+            fast += 1
+    return slow
+```
+
 ## BackTrack
 ``` python
 # 77
