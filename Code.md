@@ -106,6 +106,16 @@ def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNod
         else:
             cur = cur.next
     return virtual.next
+
+# 206
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    prev, cur = None, head
+    while cur:
+        t = cur.next
+        cur.next = prev
+        prev = cur
+        cur = t
+    return prev
 ```
 
 ## BackTrack
