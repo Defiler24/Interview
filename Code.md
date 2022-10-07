@@ -18,6 +18,32 @@ def quick_sort(arr, left, right):
     return arr
 ```
 
+## 搞脑子
+``` python 
+# 59
+def generateMatrix(self, n: int) -> List[List[int]]:
+    nums = [[0] * n for _ in range(n)]
+    loop, mid, count, x, y = n // 2, n // 2, 1, 0, 0
+    for lo in range(1, loop + 1):
+        for i in range(y, n - lo):
+            nums[x][i] = count
+            count += 1
+        for i in range(x, n - lo):
+            nums[i][n - lo] = count
+            count += 1
+        for i in range(n - lo, y, -1):
+            nums[n - lo][i] = count
+            count += 1
+        for i in range(n - lo, x, -1):
+            nums[i][y] = count
+            count += 1
+        x += 1
+        y += 1
+    if n % 2 == 1:
+        nums[mid][mid] = count
+    return nums
+```
+
 ## 双指针
 
 ``` python
