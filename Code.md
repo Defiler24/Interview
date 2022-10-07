@@ -89,6 +89,25 @@ def minSubArrayLen(self, target: int, nums: List[int]) -> int:
     return 0 if length == len(nums) + 1 else length
 ```
 
+## 链表
+``` python 
+# 203
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    virtual = ListNode(next=head)
+    cur = virtual
+    while cur.next != None:
+        if cur.next.val == val:
+            cur.next = cur.next.next
+        else:
+            cur = cur.next
+    return virtual.next
+```
+
 ## BackTrack
 ``` python
 # 77
