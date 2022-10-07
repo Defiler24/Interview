@@ -48,6 +48,19 @@ def sortedSquares(self, nums: List[int]) -> List[int]:
             right -= 1
         k -= 1
     return res
+    
+# 209
+def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+    slow, fast, cur, length = 0, 0, 0, len(nums) + 1
+    while fast < len(nums):
+        cur += nums[fast]
+        while cur >= target:
+            t = fast - slow + 1
+            length = min(t, length)
+            cur -= nums[slow]
+            slow += 1
+        fast += 1
+    return 0 if length == len(nums) + 1 else length
 ```
 
 ## BackTrack
