@@ -116,6 +116,20 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev = cur
         cur = t
     return prev
+    
+# 24
+def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    virtual = ListNode(next=head)
+    prev = virtual
+    while prev.next and prev.next.next:
+        left = prev.next
+        right = prev.next.next
+        left.next = right.next
+        right.next = left
+        prev.next = right
+
+        prev = prev.next.next
+    return virtual.next
 ```
 
 ## BackTrack
