@@ -130,6 +130,18 @@ def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
         prev = prev.next.next
     return virtual.next
+    
+# 19
+def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    virtual, fast = ListNode(next=head), ListNode(next=head)
+    slow = virtual
+    for i in range(n + 1):
+        fast = fast.next
+    while fast:
+        slow = slow.next
+        fast = fast.next
+    slow.next = slow.next.next
+    return virtual.next
 ```
 
 ## BackTrack
