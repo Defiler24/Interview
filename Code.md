@@ -142,6 +142,14 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
         fast = fast.next
     slow.next = slow.next.next
     return virtual.next
+    
+# 链表相交
+def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+    cura, curb = headA, headB
+    while cura != curb:
+        cura = cura.next if cura else headB
+        curb = curb.next if curb else headA
+    return cura
 ```
 
 ## BackTrack
